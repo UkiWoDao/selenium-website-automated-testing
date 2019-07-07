@@ -1,7 +1,5 @@
 package login;
 
-import java.io.File;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -35,8 +33,10 @@ public class LogTest {
 		int rowCount = Excel.getHWorkSheet().getLastRowNum();
 		
 		// iterate over worksheet rows
-		for(int i = 0; i < rowCount; i++) {
-			LogRun.AutomatedInput(driver, i);
+		for(int i = 1; i < rowCount; i++) {
+			
+			// noLogOut boolean - false
+			LogRun.AutomatedInput(driver, i, false);
 		}
 	}
 }

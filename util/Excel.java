@@ -117,56 +117,9 @@ public class Excel {
 
 	}
 	
-//	public static void setCellData(String Result, int RowNum, int ColNum) throws Exception {
-//		try {
-//
-//			// uzimamo red u koji upisujemo
-//			Row = ExcelWSheet.getRow(RowNum);
-//
-//			// uzimamo celiju u koju zelimo da upisemo
-//			Cell = Row.getCell(ColNum, MissingCellPolicy.RETURN_BLANK_AS_NULL);
-//
-//			// ukoliko je celija prazna ili nepostojeca
-//			if (Cell == null) {
-//				// kreiramo jen na zadatom mestu
-//				Cell = Row.createCell(ColNum);
-//
-//				// postavljamo vrednsot u celiji
-//				Cell.setCellValue(Result);
-//			} else {
-//
-//				// ako posotji podatak, svakak postavljamo vrednost tj gazimo stari
-//				Cell.setCellValue(Result);
-//			}
-//
-//			// Ovaj deo koda upisuje izmene u excell fajl
-//			FileOutputStream fileOut = new FileOutputStream(Constant.Path_TestData + Constant.File_TestData);
-//			ExcelWBook.write(fileOut);
-//
-//			// prazni podatke unutar fajla
-//			fileOut.flush();
-//
-//			// zatvaramo izlazni tok ka fajlu
-//			fileOut.close();
-//		} catch (Exception e) {
-//			throw (e);
-//		}
-//	}
-	
 	public static String getFileExtension() {
 		return DataFileExtension;
 	}
-	
-//	public static int getRowCount() {
-//		if(DataFileExtension == "xls") {
-//			return HFSheet.getLastRowNum();
-//		} else if (DataFileExtension == "xlsx") {
-//			return XFSheet.getLastRowNum();
-//		} else {
-//			System.out.println("Oops");
-//			return -1;
-//		}
-//	}
 	
 	// get HSSFworksheet reference
 	public static HSSFSheet getHWorkSheet() {

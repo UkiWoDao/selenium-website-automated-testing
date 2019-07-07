@@ -21,6 +21,9 @@ public class LogRun {
 		// TODO: implement get/navigate
 		driver.get((DataConst.getUrl()));
 		
+		// maximize browser windows
+		driver.manage().window().maximize();
+		
 		/* PROMPT USER FOR FORM DATA */
 		System.out.println("Input username name");
 		String uName = sc.next();
@@ -39,7 +42,7 @@ public class LogRun {
 		LogInteract.submit(driver);		
 	}
 	
-	public static void AutomatedInput(WebDriver driver, int i) throws Exception {
+	public static void AutomatedInput(WebDriver driver, int i, boolean LogOut) throws Exception {
 		
 		// initialize excel sheet
 		Excel.setXLSFile(DataConst.getPATH(), DataConst.getREGSHEET());
@@ -53,16 +56,16 @@ public class LogRun {
 		LogInteract.clickUserName(driver);
 		data = Excel.getCellData(i, 2);
 		LogInteract.inputUserName(driver, data);
-		Thread.sleep(250);
 		
 		LogInteract.clickPassword(driver);
 		data = Excel.getCellData(i, 4);
 		LogInteract.inputPassword(driver, data);
-		Thread.sleep(250);
 		
 		LogInteract.submit(driver);
-		Thread.sleep(250);
 		
-		LogInteract.logout(driver);
+		// stay logged in if false
+		if(LogOut == true) {
+			LogInteract.logout(driver);
+		}
 	}
 }

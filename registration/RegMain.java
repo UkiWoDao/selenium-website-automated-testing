@@ -13,8 +13,6 @@ public class RegMain {
 	public static void main(String[] args) throws Exception {
 		
 		// set driver file and property
-		File driverFile = new File("C:\\chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", driverFile.getAbsolutePath());
 		
 		// instantiate driver
 		WebDriver driver = new ChromeDriver();

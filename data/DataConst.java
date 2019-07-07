@@ -3,7 +3,8 @@ package data;
 public class DataConst {
 	
 	private static String url = "http://localhost/izlet/";
-	private static String PATH = System.getProperty("user.dir") + "\\src\\data\\Data.xls";
+//	private static String PATH = System.getProperty("user.dir") + "\\src\\data\\Data.xls";
+	private static String PATH = System.getProperty("user.dir") + "\\data\\Data.xls";
 	private static String FILENAME = "Data.xls";
 	private static String REGSHEET = "Registracija";
 	private static String TEXTSHEET = "Tekst";
